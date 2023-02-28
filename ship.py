@@ -7,3 +7,11 @@ class Ship(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, (32,32))
         # Place center of that image on the center of the screen
         self.rect = self.image.get_rect(center=(screen_width/2, screen_height/2))
+
+    def mouse_follow(self):
+        mouse_pos = pygame.mouse.get_pos()
+        self.rect.centerx = mouse_pos[0]
+        self.rect.centery = mouse_pos[1]
+
+    def run(self):
+        self.mouse_follow()

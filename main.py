@@ -20,7 +20,9 @@ while True:
             sys.exit()
 
     dt = clock.tick() / 1000 # Get a delta time in seconds
+    screen.fill("black")
 
     spaceship_group.draw(screen)
+    spaceship.run()
 
     pygame.display.update()
